@@ -256,3 +256,18 @@ void keyboard_cb(unsigned char key, int x, int y)
 int main(int argc, char **argv)
 {
     test();
+
+#ifdef USE_GLUT
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
+    glutCreateWindow("Spirograph");
+    glutInitWindowSize(400, 400);
+    // glutIdleFunc(glutPostRedisplay);
+    glutTimerFunc(animation_speed, timer_cb, 0);
+    glutKeyboardFunc(keyboard_cb);
+    glutDisplayFunc(test2);
+    glutMainLoop();
+#endif
+
+    return 0;
+}
