@@ -262,7 +262,7 @@ int main(int argc, char **argv)
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
     glutCreateWindow("Spirograph");
     glutInitWindowSize(400, 400);
-    // glutIdleFunc(glutPostRedisplay);
+    glutIdleFunc(glutPostRedisplay);
     glutTimerFunc(animation_speed, timer_cb, 0);
     glutKeyboardFunc(keyboard_cb);
     glutDisplayFunc(test2);
